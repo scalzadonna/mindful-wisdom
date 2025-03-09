@@ -5,7 +5,7 @@ import LogoutButton from "./LogoutButton";
 export default async function LogoutOrLogin(){
     const supabase = await createClient();
     const {data} = await supabase.auth.getUser()
-    console.log({data})
+
     if (data.user){
         return (
             <div>

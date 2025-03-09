@@ -15,7 +15,8 @@ export default function Login(){
                         Email Address
                     </label>
                     <input id="email" name="email" type="email" autoComplete="email" required 
-                        placeholder="Email Address" className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-700 placeholder-gray-500" />
+                        placeholder="Email Address" 
+                        className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-700 placeholder-gray-500" />
                 </div>
                 <div>
                     <label htmlFor="password"  className="sr-only">
@@ -31,13 +32,13 @@ export default function Login(){
                     {
                         isSigningUp ? (
                             <button type="submit" 
-                                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded"
+                                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
                                 formAction={signup} onClick={()=> setClickedSignedUp(true)}>
                                 Sign Up
                             </button>
                         ) : (
                             <button type="submit" 
-                                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded"
+                                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                                 formAction={login}>
                                 Login
                             </button>
@@ -70,17 +71,3 @@ export default function Login(){
         </main>
     )
 }
-// import { login, signup } from './actions'
-
-// export default function LoginPage() {
-//   return (
-//     <form>
-//       <label htmlFor="email">Email:</label>
-//       <input id="email" name="email" type="email" required />
-//       <label htmlFor="password">Password:</label>
-//       <input id="password" name="password" type="password" required />
-//       <button formAction={login}>Log in</button>
-//       <button formAction={signup}>Sign up</button>
-//     </form>
-//   )
-// }

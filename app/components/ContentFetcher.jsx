@@ -20,7 +20,9 @@ export default function ContentFetcher({user}){
         fetchContent();
     },[]);
 
-    const saveText = user ? 'Save' : 'Login to save'
+    const saveText = user ? 'Save' : 'Login to save quotes...'
+    
+    const saveStyle = user ? 'bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded' : '';
 
     return (
         <div>
@@ -34,7 +36,7 @@ export default function ContentFetcher({user}){
                     Get wisdom
                 </button>
                 <button
-                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                    className={saveStyle}
                     disable={!user}
                     onClick={async () => {
                         if (! user) return;

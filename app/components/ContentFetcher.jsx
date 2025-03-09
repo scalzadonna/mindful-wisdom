@@ -39,7 +39,6 @@ export default function ContentFetcher({user}){
                     onClick={async () => {
                         if (! user) return;
                         await saveQuote(data)
-                        alert('Saved')
                     }}
                 >
                     {saveText}

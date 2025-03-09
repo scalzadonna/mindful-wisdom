@@ -24,3 +24,23 @@ export async function saveQuote(quote) {
     }
     
 }
+
+export async function deleteQuote(quoteId) {
+    const supabase = await createClient();
+    const {data} = await supabase.auth.getUser();
+    const user = data.user;
+
+    if (!user){
+        throw Error('Must be an authenticated user to perform this action')
+    }
+
+    try{
+        const {data, error} = await supabase.from('quote').delete().match({id: quoteId, user_id: user.id})
+        if (error) throw error;
+        revalidatePath('/saved');
+        return data;
+    } catch (error){
+        throw error
+    }
+    
+}
